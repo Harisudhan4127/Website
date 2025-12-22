@@ -2,8 +2,8 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
-$botToken = "7797155729:AAE2XbAvFicbL8ACNX0hYdgpYB1tiIBukBU";
-$chatId   = "7522813568"; // your chat ID
+$botToken = "7797155729:badfsfsfsffAAdsafdsfsfE2XbAvFicbL8ACNX0hYdgpYB1";
+$chatId   = "75xxxxxxxxxxxxx"; // your chat ID
 
 $data = json_decode(file_get_contents("php://input"), true);
 

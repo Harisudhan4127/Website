@@ -2,11 +2,12 @@ function sendBooking(event) {
   event.preventDefault();
 
   const pickup = document.getElementById("pickup").value;
-  const drop = document.getElementById("drop").value;
-  const date = document.getElementById("date").value;
-  const phone = document.getElementById("phone").value;
+  const drop   = document.getElementById("drop").value;
+  const date   = document.getElementById("date").value;
+  const phone  = document.getElementById("phone").value;
 
-  fetch("api/sendTelegram.php", {
+  // 🔹 Call Node.js backend (NOT PHP)
+  fetch("https://your-backend.onrender.com/sendTelegram", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -16,9 +17,9 @@ function sendBooking(event) {
       phone
     })
   })
-  .catch(() => {}); // silently ignore errors
+  .catch(err => console.error("Telegram error:", err));
 
-  // Redirect user (MAIN FLOW)
+  // 🔹 Main flow continues (Google Form)
   const googleFormURL =
     "https://docs.google.com/forms/d/e/1FAIpQLSeSF_EdTQtsqORHGqP3J2OR38HmQpv1znudCG3yqeJcuzDkyQ/viewform?" +
     "entry.111111111=" + encodeURIComponent(pickup) +
