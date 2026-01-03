@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://maps.googleapis.com; frame-src 'self' https://www.google.com; connect-src 'self';"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pondicherry Taxi | Premium Travel & Tourism</title>
     <link rel="stylesheet" href="templates/style.css" />
@@ -13,13 +17,18 @@
   <body>
     <nav class="top-panel">
       <div class="logo">PONDICHERRY<span>TAXI</span></div>
-      <div class="menu">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#fleet">Our Cars</a>
-        <a href="#gallery">Tour Gallery</a>
-        <a href="Enquiry.html">Enquiry Now</a>
-        <a href="#booking-section" class="nav-cta">Book Now</a>
+      <div class="mobile-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="menu" id="nav-menu">
+        <a href="#home" onclick="toggleMenu()">Home</a>
+        <a href="#services" onclick="toggleMenu()">Services</a>
+        <a href="#fleet" onclick="toggleMenu()">Our Cars</a>
+        <a href="#gallery" onclick="toggleMenu()">Tour Gallery</a>
+        <a href="Enquiry3.html">Enquiry Now</a>
+        <a href="#booking-section" class="nav-cta" onclick="toggleMenu()"
+          >Book Now</a
+        >
       </div>
     </nav>
 
@@ -376,188 +385,12 @@
       </div>
     </footer>
 
-    <style>
-      /* FLEET SECTION STYLES */
-      .fleet-container {
-        padding: 80px 5%;
-        background: #000;
-      }
-      .fleet-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        margin-top: 40px;
-      }
-      .fleet-card {
-        background: #111;
-        border-radius: 15px;
-        overflow: hidden;
-        border: 1px solid #222;
-        transition: 0.4s ease;
-        text-align: center;
-      }
-      .fleet-card:hover {
-        transform: translateY(-10px);
-        border-color: #fbc531;
-        box-shadow: 0 10px 30px rgba(251, 197, 49, 0.1);
-      }
-      .fleet-card.highlighted {
-        border: 1px solid #fbc531;
-      }
-      .car-image {
-        position: relative;
-        height: 200px;
-        overflow: hidden;
-      }
-      .car-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: 0.5s;
-      }
-      .fleet-card:hover .car-image img {
-        transform: scale(1.1);
-      }
-      .passengers-tag {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        background: #fbc531;
-        color: #000;
-        padding: 5px 12px;
-        border-radius: 5px;
-        font-size: 12px;
-        font-weight: 700;
-      }
-      .fleet-info {
-        padding: 20px;
-      }
-      .fleet-info h3 {
-        color: white;
-        margin-bottom: 15px;
-        font-size: 18px;
-      }
-      .fleet-btn {
-        display: block;
-        padding: 12px;
-        border: 1px solid #fbc531;
-        color: #fbc531;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: 600;
-        transition: 0.3s;
-      }
-      .fleet-btn:hover,
-      .fleet-btn.gold {
-        background: #fbc531;
-        color: #000;
-      }
-
-      /* ORIGINAL STYLES */
-      .form-grid-2 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        background: white;
-        padding: 40px;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      }
-      .form-row-inner {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-      }
-      .input-group.floating {
-        position: relative;
-        margin-bottom: 25px;
-      }
-      .input-group.floating input,
-      .input-group.floating select {
-        width: 100%;
-        padding: 15px 12px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        outline: none;
-      }
-      .input-group.floating label {
-        position: absolute;
-        top: 15px;
-        left: 12px;
-        color: #999;
-        transition: all 0.2s;
-        background: white;
-        padding: 0 5px;
-        pointer-events: none;
-      }
-      .input-group.floating input:focus + label,
-      .input-group.floating input:not(:placeholder-shown) + label {
-        top: -10px;
-        font-size: 12px;
-        color: #fbc531;
-        font-weight: bold;
-      }
-      .submit-btn-full {
-        background: #28a745;
-        color: white;
-        border: none;
-        padding: 18px;
-        border-radius: 8px;
-        width: 100%;
-        font-weight: bold;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-      }
-      .main-footer {
-        background: #1a1a1a;
-        color: white;
-        padding: 60px 5% 20px;
-      }
-      .footer-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 40px;
-      }
-      .contact-links {
-        list-style: none;
-        padding: 0;
-      }
-      .contact-links li {
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .footer-nav {
-        list-style: none;
-        padding: 0;
-      }
-      .footer-nav a {
-        color: white;
-        text-decoration: none;
-        display: block;
-        margin-bottom: 10px;
-      }
-      .social-icons {
-        display: flex;
-        gap: 15px;
-      }
-      .social-btn {
-        color: white;
-        font-size: 20px;
-      }
-      .footer-bottom {
-        text-align: center;
-        margin-top: 40px;
-        border-top: 1px solid #333;
-        padding-top: 20px;
-      }
-    </style>
-
     <script>
+      function toggleMenu() {
+        const menu = document.getElementById("nav-menu");
+        menu.classList.toggle("active");
+      }
+
       function sendBooking(event) {
         event.preventDefault();
         const region = document.getElementById("region").value;
@@ -573,8 +406,16 @@
           now.toLocaleDateString() +
           " | " +
           now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-        const message = `*NEW TAXI BOOKING*%0A--------------------------%0A🕒 *Booked On:* ${currentBookingTime}%0A%0A🌎 *Region:* ${region}%0A👤 *Name:* ${name}%0A📞 *Phone:* ${phone}%0A🚗 *Taxi:* ${taxi}%0A%0A📍 *From:* ${pickup}%0A🏁 *To:* ${drop}%0A📅 *Date:* ${date}%0A⏰ *Pickup Time:* ${time}%0A--------------------------%0A_Instant Booking via Website_`;
-        window.open(`https://wa.me/919585641389?text=${message}`, "_blank");
+
+        // Construct the message with normal newlines
+        const messageText = `*NEW TAXI BOOKING*\n--------------------------\n🕒 *Booked On:* ${currentBookingTime}\n\n🌎 *Region:* ${region}\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n🚗 *Taxi:* ${taxi}\n\n📍 *From:* ${pickup}\n🏁 *To:* ${drop}\n📅 *Date:* ${date}\n⏰ *Pickup Time:* ${time}\n--------------------------\n_Instant Booking via Website_`;
+
+        // Encode the entire message
+        const encodedMessage = encodeURIComponent(messageText);
+        window.open(
+          `https://wa.me/919585641389?text=${encodedMessage}`,
+          "_blank"
+        );
       }
     </script>
   </body>

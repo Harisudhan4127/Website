@@ -251,6 +251,23 @@
     .enquiry-page { padding-top: 100px; }
 }
 
+/* Laptop Adjustments */
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+    .split-container { max-width: 900px; }
+    .form-section { padding: 40px; }
+    .enquiry-page { padding: 100px 4% 40px; }
+}
+
+/* Phone Improvements */
+@media (max-width: 480px) {
+    .enquiry-page { padding: 80px 4% 40px; }
+    .form-section { padding: 30px 20px; }
+    .form-header h2 { font-size: 24px; }
+    .subtitle { font-size: 13px; }
+    .input-group label { font-size: 10px; }
+    .send-btn { padding: 15px; font-size: 14px; }
+}
+
 @media (max-width: 600px) {
     .trust-grid { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 20px; }
 }
