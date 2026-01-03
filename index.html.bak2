@@ -384,17 +384,7 @@
     <script>
       function toggleMenu() {
         const menu = document.getElementById("nav-menu");
-        const toggleIcon = document.querySelector(".mobile-toggle i");
-
         menu.classList.toggle("active");
-
-        if (menu.classList.contains("active")) {
-          toggleIcon.classList.remove("fa-bars");
-          toggleIcon.classList.add("fa-times");
-        } else {
-          toggleIcon.classList.remove("fa-times");
-          toggleIcon.classList.add("fa-bars");
-        }
       }
 
       function sendBooking(event) {

@@ -128,7 +128,20 @@
 }
 
 /* Responsive Design */
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+    .booking-left, .booking-right { padding: 40px; }
+    .booking-right h3 { font-size: 1.5rem; }
+}
+
 @media (max-width: 768px) {
     .form-grid { grid-template-columns: 1fr; }
     .booking-left, .booking-right { padding: 30px; }
+    .split-booking-container { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+    .booking-left, .booking-right { padding: 20px; }
+    .booking-right h3 { font-size: 1.4rem; }
+    .spec-list li { font-size: 0.9rem; }
+    .submit-btn { font-size: 1rem; padding: 12px; }
 }
